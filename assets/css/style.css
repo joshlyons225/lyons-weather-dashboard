@@ -1,0 +1,8 @@
+:root {
+    --grey: #59747c;
+}
+
+* {
+    background-color: var(--grey);
+    font-family: 'Helvetica Neue', sans-serif;
+}
