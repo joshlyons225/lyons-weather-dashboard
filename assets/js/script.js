@@ -5,7 +5,7 @@ var searchButtonEl = document.querySelector("#searchBtn");
 var getWeatherApi = function () {
     var cityName = document.getElementById('city-search').value;
     console.log(cityName);
-    const weatherApi = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=1cea6050e017bee6a2d6d8c3cc614e1e";
+    const weatherApi = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=1cea6050e017bee6a2d6d8c3cc614e1e&units=imperial";
     fetch(weatherApi)
     .then(function(response) {
         if (response.ok) {
