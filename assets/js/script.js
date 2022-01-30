@@ -2,6 +2,7 @@
 var searchButtonEl = document.querySelector("#searchBtn");
 var favHistoryArray = document.querySelector("#city-history");
 var resetButtonEl = document.querySelector("#resetBtn");
+var currentWxEl = document.querySelector("#current-weather");
 
 // API fetch and function
 var getWeatherApi = function () {
@@ -13,6 +14,8 @@ var getWeatherApi = function () {
         if (response.ok) {
             response.json().then(function(data) {
                 console.log(data);
+                // display current weather conditions
+                currentWxEl.innerHTML = data.main.temp;
             })
         }
     })
@@ -29,11 +32,12 @@ var getWeatherApi = function () {
     favHistoryArray.innerHTML = savedCities.join("<br/>");
 };
 
+// clear localStorage and reset searched cities list
 var resetFavorites = function () {
     favHistoryArray.textContent = "";
     localStorage.clear();
     console.log("cleared city search history");
-}
+};
 
 // eventListener for Search button
 searchButtonEl.addEventListener("click", getWeatherApi);
