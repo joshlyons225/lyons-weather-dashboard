@@ -14,9 +14,16 @@ var getWeatherApi = function () {
             })
         }
     })
+    // save city name to localStorage
+    var savedCities = JSON.parse(localStorage.getItem("city"));
+    if (savedCities === null) {
+        savedCities = [];
+    }
+    var favCities = cityName;
+    savedCities.push(favCities);
+    localStorage.setItem("city", JSON.stringify(savedCities));
+    console.log(localStorage.getItem("city"));
 };
-
-// save to localStorage
 
 // eventListener for Search button
 searchButtonEl.addEventListener("click", getWeatherApi);
