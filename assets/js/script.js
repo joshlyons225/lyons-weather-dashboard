@@ -1,5 +1,6 @@
 // globals
 var searchButtonEl = document.querySelector("#searchBtn");
+var favHistoryArray = document.querySelector("#city-history");
 
 // API fetch and function
 var getWeatherApi = function () {
@@ -23,6 +24,8 @@ var getWeatherApi = function () {
     savedCities.push(favCities);
     localStorage.setItem("city", JSON.stringify(savedCities));
     console.log(localStorage.getItem("city"));
+    // display searched cities to search history section
+    favHistoryArray.innerHTML = savedCities.join("<br/>");
 };
 
 // eventListener for Search button
