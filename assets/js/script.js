@@ -1,6 +1,7 @@
 // globals
 var searchButtonEl = document.querySelector("#searchBtn");
 var favHistoryArray = document.querySelector("#city-history");
+var resetButtonEl = document.querySelector("#resetBtn");
 
 // API fetch and function
 var getWeatherApi = function () {
@@ -28,8 +29,17 @@ var getWeatherApi = function () {
     favHistoryArray.innerHTML = savedCities.join("<br/>");
 };
 
+var resetFavorites = function () {
+    favHistoryArray.textContent = "";
+    localStorage.clear();
+    console.log("cleared city search history");
+}
+
 // eventListener for Search button
 searchButtonEl.addEventListener("click", getWeatherApi);
+
+// eventListener for Reset button
+resetButtonEl.addEventListener("click", resetFavorites);
 
 
 
