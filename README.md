@@ -14,7 +14,7 @@ https://joshlyons225.github.io/lyons-weather-dashboard/
 
 https://github.com/joshlyons225/lyons-weather-dashboard
 
-** Place Screenshot here **
+![Wx_app](https://user-images.githubusercontent.com/95392565/151725822-08e54bef-6b15-416f-a9a6-557f86637b90.png)
 
 ## Contribution
 Made with ❤️ by Josh Lyons
